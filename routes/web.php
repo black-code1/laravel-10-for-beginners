@@ -19,16 +19,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     // fetch all users
 //    $users = DB::select("select * from users");
-        $users = User::all();
+        $user = User::find(8);
     // create new user
 //     $user = DB::insert('insert into users (name, email, password) values (?,?,?)', [
-//         'legrand',
-//         'legrand@lg.com',
+//         'Legrand',
+//         'legrand@legrand.com',
 //         'legrand1',
 //     ]);
+
+//    $user = DB::table('users')->insert([
+//        'name'=>'Legrand2',
+//        'email'=>'legrand@lg.com',
+//        'password'=>'legrand1',
+//    ]);
 //    $user = User::create([
-//        'name' => 'Legrand',
-//        'email' => 'legrand@lg.com',
+//        'name' => 'Legrand6',
+//        'email' => 'legrand@lmn.com',
 //        'password' => 'legrand1'
 //    ]);
 
@@ -46,7 +52,7 @@ Route::get('/', function () {
 //     $user = DB::delete("delete from users where id=2");
 //    $user = User::find(4);
 //    $user->delete();
-    dd($users);
+    dd($user->name);
     return view('welcome');
 
 });
